@@ -16,18 +16,27 @@ buttons.forEach((button) => {
       case 'back':
         display.value = display.value.slice(0, -1);
         break;
-      case 'equal':
-        try {
-          // Handle empty input
-          if (display.value === '') {
-            display.value = '0';
-          }
-          // Handle parentheses for mathematical expressions
-          display.value = eval(display.value);
-        } catch (error) {
-          display.value = 'Error';
-        }
-        break;
+     case 'equal':
+  try {
+    // Handle empty input
+    if (display.value === '') {
+      display.value = '0';
+    }
+    // Add a condition to handle the "+" operator
+    if (display.value.includes('+')) {
+      const operands = display.value.split('+');
+      if (operands.length === 2) {
+        const result = parseFloat(operands[0]) + parseFloat(operands[1]);
+        display.value = result.toString();
+      }
+    } else {
+      display.value = eval(display.value);
+    }
+  } catch (error) {
+    display.value = 'Error';
+  }
+  break;
+
       default:
         display.value += buttonText;
     }
