@@ -18,6 +18,11 @@ buttons.forEach((button) => {
         break;
       case 'equal':
         try {
+          // Handle empty input
+          if (display.value === '') {
+            display.value = '0';
+          }
+          // Handle parentheses for mathematical expressions
           display.value = eval(display.value);
         } catch (error) {
           display.value = 'Error';
