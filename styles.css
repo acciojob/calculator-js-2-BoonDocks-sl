@@ -20,7 +20,6 @@ button {
   display: grid;
   grid-template-columns: repeat(4, 0fr);
   margin-left:140px;
-/*   grid-gap: 3px; */
 }
 
 button#equal {
