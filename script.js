@@ -1,27 +1,30 @@
-// JavaScript (script.js)
+const display = document.getElementById('display');
+const buttons = document.querySelectorAll('button');
 
-let currentExpression = "";
+buttons.forEach((button) => {
+  button.addEventListener('click', () => {
+    const buttonText = button.innerText;
 
-function addToDisplay(value) {
-  currentExpression += value;
-  document.getElementById("display").textContent = currentExpression;
-}
+    if (buttonText === '.' && display.value.includes('.')) {
+      return;
+    }
 
-function clearDisplay() {
-  currentExpression = "";
-  document.getElementById("display").textContent = "0";
-}
-
-function removeLastCharacter() {
-  currentExpression = currentExpression.slice(0, -1);
-  document.getElementById("display").textContent = currentExpression;
-}
-
-function calculateResult() {
-  try {
-    currentExpression = eval(currentExpression);
-    document.getElementById("display").textContent = currentExpression;
-  } catch (error) {
-    document.getElementById("display").textContent = "Error";
-  }
-}
+    switch (button.id) {
+      case 'C':
+        display.value = '';
+        break;
+      case 'back':
+        display.value = display.value.slice(0, -1);
+        break;
+      case 'equal':
+        try {
+          display.value = eval(display.value);
+        } catch (error) {
+          display.value = 'Error';
+        }
+        break;
+      default:
+        display.value += buttonText;
+    }
+  });
+});
