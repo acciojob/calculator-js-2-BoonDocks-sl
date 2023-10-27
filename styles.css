@@ -1,82 +1,28 @@
-body {
-/*   font-family: Arial, sans-serif; */
-  display area : display
-}
-
 .calculator {
   text-align: center;
   margin: 20px;
 }
 
 input[type="text"] {
-  width: 60%;
+  width: 54%;
   height: 100px;
   font-size: 20px;
 /*   margin: 10px 0; */
 }
 
 button {
-  width: 93px;
-  height: 110px;
+  width: 85px;
+  height: 80px;
   font-size: 24px;
-  margin: 0px;
-	border-width:2px;
-}
 
+}
 .buttons {
   display: grid;
   grid-template-columns: repeat(4, 0fr);
-  margin-left:120px;
+  margin-left:140px;
 /*   grid-gap: 3px; */
 }
 
-/* button#C {
-  grid-column: span 2;
-} */
-
-/* button#back {
-  grid-column: span 2;
-} */
-
 button#equal {
-/*   grid-column: span 2; */
 	background-color:#5555FF;
 }
-
-/* button#0 {
-  grid-column: span 2;
-} */
-
-/* button#divi,
-button#multiply,
-button#minus,
-button#plus {
-  background-color: #f0f0f0;
-}
- */
-/* button#op,
-button#cl {
-  background-color: #e0e0f0;
-	grid-column: span 2;
-} */
-button#divi,
-button#multiply,
-button#minus,
-button#plus,
-button#op,
-button#cl,
-button#C {
-  background-color: #E5E5E5;
-  transition: background-color 0.3s; /* Add a smooth transition effect */
-  
-}
-/* 
-button#divi:hover,
-button#multiply:hover,
-button#minus:hover,
-button#plus:hover,
-button#op:hover,
-button#cl:hover,
-button#C:hover {
-  background-color: #3333FF;
-} */
